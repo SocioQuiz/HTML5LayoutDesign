@@ -1,0 +1,58 @@
+!!!
+%html
+  %head
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "material/css/ripples.min.css", :rel => "stylesheet"}/
+    %link{:href => "material/css/material-wfont.min.css", :rel => "stylesheet"}/
+    %link{:href => "style.css", :rel => "stylesheet"}/
+  %body
+    .navbar.navbar-default
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "javascript:void(0)"} Logo SocioQuiz
+      .navbar-collapse.collapse.navbar-responsive-collapse
+        %ul.nav.navbar-nav
+          %li.active
+            %a{:href => "javascript:void(0)"} Home
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{:href => "javascript:void(0)"} Login
+          %li
+            %a{:href => "signup.html.haml", :style => "border-left: 3px solid white;"} Sign up
+    .container{:style => "margin-top: 100px;"}
+      #login-area.row.col-md-8.col-md-offset-2
+        / login via fb gg+ twitter
+        .well.col-md-4
+          %legend Login with
+          %a.btn.btn-primary.btn-raised.withripple.full-width{:href => "javascript:void(0)"} Facebook
+          %a.btn.btn-danger.btn-raised.withripple.full-width{:href => "javascript:void(0)"} Google +
+          %a.btn.btn-info.btn-raised.withripple.full-width{:href => "javascript:void(0)"} Twitter
+        %h3.col-md-1{:style => "text-align: center;"} Or
+        / login via email
+        .well.col-md-7
+          %form.form-horizontal
+            %fieldset
+              %legend Login with Email
+              .form-group
+                .col-lg-12
+                  %input#inputEmail.form-control{:placeholder => "Email", :type => "email"}/
+              .form-group
+                .col-lg-12
+                  %input#inputPassword.form-control{:placeholder => "Password", :type => "password"}/
+              .checkbox{:style => "float: left;"}
+                %label{:style => "padding-left: 0;"}
+                  %input{:type => "checkbox"}>/
+                  Stay logged in
+              %div{:style => "position: absolute; bottom: 15px; left: 15px;"}
+                Don't have an account?
+                %a{:href => "signup.html.haml"}
+                  Create one
+                  %i.mdi-navigation-arrow-forward
+              %a.btn.btn-primary.btn-fab.btn-raised.mdi-action-exit-to-app{:href => "javascript:void(0)", :style => "position: absolute; bottom: 15px; right: 15px;"}
+    %script{:src => "https://code.jquery.com/jquery-1.10.2.min.js"}
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"}
+    %script{:src => "material/js/ripples.min.js"}
+    %script{:src => "material/js/material.min.js"}
